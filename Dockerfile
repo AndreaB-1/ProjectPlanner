@@ -1,8 +1,5 @@
 FROM nginx:alpine
 
-# Install apache2-utils for htpasswd
-RUN apk add --no-cache apache2-utils
-
 # Copy nginx site config
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
