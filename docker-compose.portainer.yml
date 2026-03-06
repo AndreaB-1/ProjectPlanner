@@ -1,6 +1,6 @@
 services:
   planner:
-    image: projectplanner:latest
+    image: ghcr.io/andreab-1/projectplanner:latest
     ports:
       - "${PORT:-8080}:80"
     volumes:
