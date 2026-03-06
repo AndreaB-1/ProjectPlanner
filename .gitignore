@@ -1,0 +1,2 @@
+# Environment file with real credentials - never commit this
+.env

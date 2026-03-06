@@ -1,0 +1,15 @@
+services:
+  planner:
+    build: .
+    ports:
+      - "${PORT:-8080}:80"
+    volumes:
+      # Bind-mount the app so you can update index.html without rebuilding
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      # Bind-mount a host directory for your saved project XML files.
+      # Files dropped here will be browseable at http://localhost:8080/projects/
+      - ./projects:/data/projects
+    environment:
+      BASIC_AUTH_USER: ${BASIC_AUTH_USER:-admin}
+      BASIC_AUTH_PASSWORD: ${BASIC_AUTH_PASSWORD:-changeme}
+    restart: unless-stopped
