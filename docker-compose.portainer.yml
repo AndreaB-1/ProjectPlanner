@@ -5,9 +5,6 @@ services:
       - "${PORT:-8080}:80"
     volumes:
       - planner_projects:/data/projects
-    environment:
-      BASIC_AUTH_USER: ${BASIC_AUTH_USER:-admin}
-      BASIC_AUTH_PASSWORD: ${BASIC_AUTH_PASSWORD:-changeme}
     restart: unless-stopped
 
 volumes:
